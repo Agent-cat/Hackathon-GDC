@@ -20,6 +20,7 @@ const App = () => {
         isLoggedIn={isLoggedIn}
         setIsLoggedIn={setIsLoggedIn}
         setLoginData={setLoginData}
+        loginData={loginData}
       />
     </div>
   );

@@ -2,53 +2,31 @@ export const NavbarLinks = [
   {
     name: "Home",
     path: "/",
+    role: ["ngo", "admin", "user", "volunteer", "donor"],
   },
   {
     name: "Donate",
     path: "/donate",
+    role: ["user", "donor", "volunteer", "admin"],
   },
   {
     name: "About Us",
     path: "/about",
+    role: ["ngo", "admin", "user", "volunteer", "donor"],
   },
   {
     name: "Contact",
     path: "/contact",
+    role: ["ngo", "admin", "user", "volunteer", "donor"],
   },
   {
     name: "Register NGO",
     path: "/register-ngo",
-  },
-];
-export const ngoData = [
-  {
-    name: "Hope Foundation",
-    location: "New York, USA",
-    totalDonations: 500000,
-    owner: "Sarah Johnson",
+    role: ["admin", "ngo"],
   },
   {
-    name: "Green Earth Initiative",
-    location: "London, UK",
-    totalDonations: 750000,
-    owner: "Michael Brown",
-  },
-  {
-    name: "Children's Future",
-    location: "Mumbai, India",
-    totalDonations: 300000,
-    owner: "Priya Patel",
-  },
-  {
-    name: "Clean Water Project",
-    location: "Nairobi, Kenya",
-    totalDonations: 250000,
-    owner: "David Ochieng",
-  },
-  {
-    name: "Education for All",
-    location: "Rio de Janeiro, Brazil",
-    totalDonations: 400000,
-    owner: "Ana Silva",
+    name: "Handle NGO",
+    path: "/handle-ngo",
+    role: ["admin"],
   },
 ];

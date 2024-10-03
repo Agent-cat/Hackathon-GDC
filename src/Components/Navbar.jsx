@@ -49,7 +49,6 @@ const Navbar = ({ isLoggedIn, loginData }) => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
   return (
     <nav ref={navbarRef} className="bg-white fixed top-0 w-full z-50">
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -62,7 +61,14 @@ const Navbar = ({ isLoggedIn, loginData }) => {
               key={index}
               to={link.path}
               className={({ isActive }) =>
-                `nav-link text-xl font-bold ${
+                `nav-link ${
+                  link.role &&
+                  loginData &&
+                  loginData.role &&
+                  link.role.includes(loginData.role)
+                    ? ""
+                    : "hidden"
+                } text-xl font-bold ${
                   isActive ? "text-red-600" : "text-gray-800 hover:text-red-600"
                 }`
               }
@@ -76,8 +82,9 @@ const Navbar = ({ isLoggedIn, loginData }) => {
         </div>
         <div className="hidden md:block">
           {isLoggedIn ? (
-            <div className="user-info text-xl font-bold text-red-600">
-              Welcome {loginData.username}
+            <div className="user-info flex flex-col items-center justify-center text-xl font-bold text-red-600">
+              <h1>{loginData && loginData.username}</h1>
+              <h1>Role:( {loginData && loginData.role}) </h1>
             </div>
           ) : (
             <div className="auth-buttons">
@@ -110,7 +117,14 @@ const Navbar = ({ isLoggedIn, loginData }) => {
                 key={index}
                 to={link.path}
                 className={({ isActive }) =>
-                  `nav-link text-xl font-bold ${
+                  `nav-link ${
+                    link.role &&
+                    loginData &&
+                    loginData.role &&
+                    link.role.includes(loginData.role)
+                      ? ""
+                      : "hidden"
+                  } text-xl font-bold ${
                     isActive
                       ? "text-red-600"
                       : "text-gray-800 hover:text-red-600"
@@ -126,7 +140,7 @@ const Navbar = ({ isLoggedIn, loginData }) => {
             </NavLink>
             {isLoggedIn ? (
               <div className="user-info text-xl font-bold text-red-600">
-                Welcome {loginData.username}
+                Welcome {loginData && loginData.username}
               </div>
             ) : (
               <div className="auth-buttons flex flex-col space-y-2">

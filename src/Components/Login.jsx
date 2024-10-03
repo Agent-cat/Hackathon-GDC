@@ -25,7 +25,7 @@ const Login = ({ setIsLoggedIn, setLoginData }) => {
       console.log("Login successful:", response.data);
       setIsLoggedIn(true);
       setLoginData(response.data);
-      navigate("/donate");
+      navigate("/");
     } catch (error) {
       console.error("Login error:", error.response.data);
     }

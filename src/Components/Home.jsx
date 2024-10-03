@@ -4,7 +4,7 @@ import { useGSAP } from "@gsap/react";
 import img2 from "../assets/img2.png";
 import { Link } from "react-router-dom";
 
-const Home = () => {
+const Home = ({ loginData }) => {
   const containerRef = useRef(null);
   const headingRef = useRef(null);
   const buttonRef = useRef(null);
@@ -162,11 +162,17 @@ const Home = () => {
             <span className="text-red-600">Child Matters.</span>
           </h1>
           <Link
-            to="/donate"
+            to={
+              loginData && loginData.role === "ngo"
+                ? "/register-ngo"
+                : "/donate"
+            }
             ref={buttonRef}
             className="bg-red-600 button hover:bg-red-700 text-white font-bold text-xl w-fit px-8 py-4 rounded-full transition duration-300 ease-in-out"
           >
-            Donate Now
+            {loginData && loginData.role === "ngo"
+              ? "Register NGO"
+              : "Donate Now"}
           </Link>
         </div>
       </div>

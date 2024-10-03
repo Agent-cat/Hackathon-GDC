@@ -53,7 +53,7 @@ const RegisterNgo = () => {
   );
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 relative">
+    <div className="min-h-screen  overflow-hidden flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 relative">
       <div className="absolute inset-0 z-0">
         <svg
           xmlns="http://www.w3.org/2000/svg"
